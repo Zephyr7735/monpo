@@ -1,197 +1,225 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
 
+/* Define base font size */
+:root {
+    --base-font-size: 20px;
+}
 
+/* Apply base font size and font family globally */
 body {
-
     padding: 0 2%;
     margin: 0;
-    font-family: 'Noto Sans', sans-serif;  
-
-
+    font-family: 'Noto Sans', sans-serif;
+    font-size: var(--base-font-size);
 }
-   
 
+/* Navigation styles */
 nav {
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items:center; 
+    align-items: center;
     background-color: white;
     position: sticky;
     top: 0;
 }
 
-nav .profile{
+nav .profile {
     display: flex;
     align-items: center;
-
 }
+
 nav .profile img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
-nav .profile h1{
-    margin-left:10px ;
-    font-size: 15px;
+
+nav .profile h1 {
+    margin-left: 10px;
+    font-size: 17px;
 }
-nav ul{
+
+nav ul {
     display: flex;
     list-style-type: none;
 }
-nav ul li{
+
+nav ul li {
     margin-left: 20px;
     cursor: pointer;
-    border-bottom: 1px solid #fff ;
-}
-nav ul li:hover{
-    border-bottom:#000 ;
+    border-bottom: 1px solid #fff;
 }
 
-.page-content{
+nav ul li a {
+    text-decoration: none;
+    color: rgb(44, 44, 78);
+    font-size: var(--base-font-size);
+
+}
+
+nav ul li a:hover {
+    color: rgb(44, 44, 78, 0.7);
+}
+
+nav ul li:hover {
+    border-bottom: #000;
+}
+
+/* Page content styles */
+.page-content {
     margin: 4%;
 }
 
-.page-content header{
-    margin-top: 5% ;
-    max-width:80%;
+.page-content header {
+    margin-top: 5%;
+    max-width: 80%;
 }
 
-.page-content header h1{
+.page-content header h1 {
     margin: 0;
     text-transform: uppercase;
-    font-size: 4vw;
-    font-family:"oswald",sans-serif;
+    font-size: 5rem;
+    font-family: "Oswald", sans-serif;
     color: rgb(44, 44, 78);
 }
 
-.page-content header p{
+.page-content header p {
     line-height: 30px;
     color: #818181;
-
 }
-.page-content header button{
+
+.page-content header button {
     background-color: inherit;
     border: none;
     outline: none;
-    padding: 0 ;
-    font-size: 15px;
+    padding: 0;
+    font-size: var(--base-font-size);
     font-weight: bold;
     padding-bottom: 5px;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
 }
-.page-content.presentation-image{
-    margin-top: 5% ;
+
+.page-content .presentation-image {
+    margin-top: 5%;
 }
-.page-content .presentation-imge{
+
+.page-content .presentation-image img {
     max-width: 100%;
     height: auto;
     transition: 0.5s;
+    width: 40rem;
+    margin-top: 2rem;
 }
-.page-content .presentation-image img:hover{
+
+.page-content .presentation-image img:hover {
     filter: brightness(50%);
 }
-.page-content header button:hover{
-    color:rgba(116, 115, 115, 0.288);
+
+.page-content header button:hover {
+    color: rgba(116, 115, 115, 0.288);
 }
-.page-content.project-section{
+
+.project-section {
     margin-top: 6%;
 }
-.project-section h1{
-    font-family: 'oswald', sans-serif;
+
+.project-section h1 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     font-size: 4vw;
     color: rgb(44, 44, 78);
 }
-.project-section .projects{
+
+.project-section .projects {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    
+    gap:12px;
 }
-.project-section .projects .project{
-    max-width: 195px;
+
+.project-section .projects .project {
+    max-width: 395px;
     margin-right: 20px;
 }
-.project-section.projects .project h4{
+
+.project h4 {
     margin: 0;
+    font-size: 27px;
+
 }
+
 .project-section .projects .project .description {
-    font-size: 13px;
-  
+    font-size: var(--base-font-size);
+    color:#818181;
 }
-.project-section .projects .project .dates{
-    font-size: 11px;
-    color:black;
+
+.project-section .projects .project .dates {
+    font-size: 17px;
+    color: black;
     font-weight: 900;
 }
 
-footer{
+/* Footer styles */
+footer {
+    padding: 1rem;
     margin-top: 5%;
     display: flex;
-    background-color:rgb(44, 44, 78);
+    background-color: rgb(61, 61, 94);
     color: #fff;
-    padding: 1%;
     border-radius: 30px;
     margin-bottom: 2%;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-footer .colonne p {
-    font-size: 12px;
-    color:#ccc
-    
-    
-}
-footer .colonne p:hover{
-    color:blanchedalmond;  
-}
-
-footer .colonne a:hover{
-    color:blanchedalmond; 
+  
+footer .colonne a:hover {
+    color: blanchedalmond;
 }
 
 
-footer .colonne a{
-
-    color:white;
-    font-size: 12px;
+footer .colonne a {
+    color: white;
+    font-size: 17px;
     text-decoration: none;
     
 }
 
+/* Media query for smaller screens */
+@media screen and (max-width: 700px) {
+    .page-content header h1 {
+        font-size: 2rem;
+    }
 
-
-@media screen and(max-width:700px) {
-    nav{
+    nav {
+        padding: 1rem;
         justify-content: center;
     }
-    nav ul{
+    nav ul {
         display: none;
     }
     .page-content header {
-      margin-top: 10%;  
+        margin-top: 10%;
     }
-    .project-section{
+    .project-section {
         margin-top: 15%;
-    
     }
-    .project-section h1{
+    .project-section h1 {
         font-size: 1.5em;
-
     }
-    .page-content .project-section .projects .project{
-        margin-right:0;
+    .page-content .project-section .projects .project {
+        margin-right: 0;
         margin-bottom: 20px;
         max-width: 100%;
     }
-    footer{
-        justify-content:flex-start;
+    footer {
+        justify-content: flex-start;
     }
-    footer .colonne{
+    footer .colonne {
         width: 80%;
     }
 }
